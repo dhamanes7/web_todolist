@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ToDoWeb>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Add task</h2>
+<form class="form-inline" action="/action_page.php">
+    @Html.Label("Title")
+    @Html.TextBox("title")
+    @*<label asp-for="">Task Name</label>
+    <input asp-for="title" placeholder="Enter task here" />*@
+    <button type="submit" value="submit" name="submit"></button>
+</form>
+
+<h2>Mark completed</h2>
+<form class="form-inline" action="/action_page.php">
+    @Html.Label("Title")
+    @Html.TextBox("title")
+    <button type="submit" value="completed" name="completed"></button>
+</form>
+
+
+<h2>To Do List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isCompleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.completedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isCompleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.completedDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
