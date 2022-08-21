@@ -9,7 +9,7 @@ using ToDoWeb.Models;
 
 namespace ToDoWeb.Controllers
 {
-    
+
     public class ToDoWeb : Controller
     {
         public int i = 0;
@@ -23,19 +23,23 @@ namespace ToDoWeb.Controllers
         }
     }
 
-    [HttpPost]
-    public IActionResult Index(Models.ToDoWeb ToDoList, String submit, string completed)
-    {
-        if (submit == "submit")
-        {
-            ToDoList.id = "1";
-            ToDoList.title = "name";
-            ToDoList.completedDate = "NA";
-            ToDoList.isCompleted = "NA";
-        }
-        else if (completed == "completed")
-        {
-        }
-        return View();
-    }
+    //[HttpPost]
+
+    //public ActionResult Index(Models.ToDoWeb ToDoList, string submit, string completed)
+    //{
+    //    if (submit == "submit")
+    //    {
+    //        ToDoList.id = 1;
+    //        ToDoList.title = "name";
+    //        ToDoList.completedDate = "NA";
+    //        ToDoList.isCompleted = "NA";
+    //    }
+    //    else if (completed == "completed")
+    //    {
+    //    }
+
+    //    return View();
+    //}
+
+
 }
